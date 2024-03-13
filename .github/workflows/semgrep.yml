@@ -44,6 +44,7 @@ jobs:
         with:
           name: gradlelockfile
       - run: |
+          git config --global --add safe.directory /__w/log4j-vulnerable-gradle-nn/log4j-vulnerable-gradle-nn
           git add gradle.lockfile
           git commit -m "added gradle.lockfile"
           semgrep ci --debug --json --output=findings.json
