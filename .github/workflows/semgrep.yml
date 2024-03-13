@@ -44,6 +44,8 @@ jobs:
         with:
           name: gradlelockfile
       - run: |
+          git config --global user.email "nitin@example.com"
+          git config --global user.name "nitin"
           git config --global --add safe.directory /__w/log4j-vulnerable-gradle-nn/log4j-vulnerable-gradle-nn
           git add gradle.lockfile
           git commit -m "added gradle.lockfile"
