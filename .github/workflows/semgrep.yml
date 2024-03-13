@@ -20,8 +20,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build with Gradle
-        run: gradle clean compileJava
+      # - name: Build with Gradle
+      #   run: gradle clean compileJava
       - name: Build Dependency Lock File
         run: gradle dependencies --write-locks
       - name: Upload Gradle Lock File
