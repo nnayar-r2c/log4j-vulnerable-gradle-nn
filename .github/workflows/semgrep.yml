@@ -43,7 +43,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: gradlelockfile
-      - run: semgrep ci --debug --json --output=findings.json
+      - run: |
+          git add gradle.lockfile
+          git commit -m "added gradle.lockfile"
+          semgrep ci --debug --json --output=findings.json
       - name: Upload Findings.json
         uses: actions/upload-artifact@v3
         with:
